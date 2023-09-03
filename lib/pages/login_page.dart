@@ -23,6 +23,9 @@ class _LoginPageState extends State<LoginPage> {
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Column(
               children: [
+                const SizedBox(
+                  height: 50,
+                ),
                 // logo
                 Icon(
                   Icons.work,
@@ -35,12 +38,28 @@ class _LoginPageState extends State<LoginPage> {
                   "WELCOME BACK",
                   style: TextStyle(fontSize: 25),
                 ),
+                const SizedBox(
+                  height: 20,
+                ),
                 // email text fields
                 MyTextField(
                     controller: emailController,
                     hintText: "Email",
                     obscureText: false),
+
+                const SizedBox(
+                  height: 10,
+                ),
+
                 // password text fields
+                MyTextField(
+                    controller: passwordController,
+                    hintText: "Password",
+                    obscureText: true),
+
+                const SizedBox(
+                  height: 20,
+                ),
 
                 // sign in button
 
