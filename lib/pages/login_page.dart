@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:job_app/components/my_text_field.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -8,6 +9,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  // text controller
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +31,12 @@ class _LoginPageState extends State<LoginPage> {
               const Text(
                 "WELCOME BACK",
                 style: TextStyle(fontSize: 25),
-              )
+              ),
               // email text fields
-
+              MyTextField(
+                  controller: emailController,
+                  hintText: "Email",
+                  obscureText: false),
               // password text fields
 
               // sign in button
