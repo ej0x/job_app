@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:job_app/components/my_button.dart';
 import 'package:job_app/components/my_text_field.dart';
 
 class LoginPage extends StatefulWidget {
@@ -62,8 +63,22 @@ class _LoginPageState extends State<LoginPage> {
                 ),
 
                 // sign in button
+                MyButton(onTap: () {}, text: "Sign In"),
 
+                const SizedBox(
+                  height: 20,
+                ),
                 // not a member ? register now
+
+                Row(
+                  children: [
+                    Text("Not a member?"),
+                    const SizedBox(
+                      width: 4,
+                    ),
+                    Text('Register Now')
+                  ],
+                )
               ],
             ),
           ),
