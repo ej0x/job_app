@@ -41,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade300,
+      backgroundColor: Colors.blue.shade300,
       body: SafeArea(
         child: Center(
           child: Padding(
@@ -55,8 +55,11 @@ class _LoginPageState extends State<LoginPage> {
                 // logo
                 Icon(
                   Icons.work,
+                  shadows: const [
+                    Shadow(color: Colors.black, blurRadius: 20.0),
+                  ],
                   size: 100,
-                  color: Colors.grey[800],
+                  color: Colors.yellow.shade800,
                 ),
 
                 const SizedBox(
@@ -66,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                 // welcome back message
                 const Text(
                   "WELCOME BACK",
-                  style: TextStyle(fontSize: 25),
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
                   height: 20,
