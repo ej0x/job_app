@@ -24,5 +24,10 @@ class AuthServices extends ChangeNotifier {
     }
   }
 
+  // Create  a new user
+
   //sign user out
+  Future<void> signOut() async {
+    return await FirebaseAuth.instance.signOut();
+  }
 }
