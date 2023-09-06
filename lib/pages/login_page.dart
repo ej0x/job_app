@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:job_app/components/my_button.dart';
 import 'package:job_app/components/my_text_field.dart';
 import 'package:provider/provider.dart';
-import 'package:job_app/services/auth/authe_services.dart';
+import 'package:job_app/services/auth/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
   final void Function()? onTap;
@@ -30,9 +30,10 @@ class _LoginPageState extends State<LoginPage> {
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-            content: Text(
-          e.toString(),
-        )),
+          content: Text(
+            e.toString(),
+          ),
+        ),
       );
     }
   }
@@ -91,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
 
                 // sign in button
-                MyButton(onTap: () {}, text: "Sign In"),
+                MyButton(onTap: signIn, text: "Sign In"),
 
                 const SizedBox(
                   height: 20,
