@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:job_app/components/my_button.dart';
 import 'package:job_app/components/my_text_field.dart';
+import 'package:provider/provider.dart';
+import 'package:job_app/services/auth/authe_services.dart';
 
 class LoginPage extends StatefulWidget {
   final void Function()? onTap;
@@ -17,7 +19,23 @@ class _LoginPageState extends State<LoginPage> {
 
   // Sign In user
 
-  void signIn() {}
+  Future<void> signIn() async {
+    // get the auth service
+    final authService = Provider.of<AuthServices>(context, listen: false);
+    try {
+      await authService.signInWithEmailAndPassword(
+        emailController.text,
+        passwordController.text,
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+            content: Text(
+          e.toString(),
+        )),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
