@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
-class AuthServices {
+class AuthServices extends ChangeNotifier {
   // Instance of auth
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
