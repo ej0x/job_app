@@ -3,7 +3,8 @@ import 'package:job_app/components/my_button.dart';
 import 'package:job_app/components/my_text_field.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final void Function()? onTap;
+  const LoginPage({super.key, required this.onTap});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -13,6 +14,10 @@ class _LoginPageState extends State<LoginPage> {
   // text controller
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
+  // Sign In user
+
+  void signIn() {}
 
   @override
   Widget build(BuildContext context) {
@@ -75,16 +80,19 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 // not a member ? register now
 
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Not a member?"),
-                    SizedBox(
+                    const Text("Not a member?"),
+                    const SizedBox(
                       width: 4,
                     ),
-                    Text(
-                      'Register Now',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                    GestureDetector(
+                      onTap: widget.onTap,
+                      child: const Text(
+                        'Register Now',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ],
                 )

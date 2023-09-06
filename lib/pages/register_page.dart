@@ -3,7 +3,8 @@ import 'package:job_app/components/my_button.dart';
 import 'package:job_app/components/my_text_field.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+  final void Function()? onTap;
+  const RegisterPage({super.key, required this.onTap});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -88,16 +89,19 @@ class _RegisterPageState extends State<RegisterPage> {
                   height: 20,
                 ),
                 // Already Member ?
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Already a member?"),
-                    SizedBox(
+                    const Text("Already a member?"),
+                    const SizedBox(
                       width: 4,
                     ),
-                    Text(
-                      'Login now ',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                    GestureDetector(
+                      onTap: widget.onTap,
+                      child: const Text(
+                        'Login now ',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ],
                 )
