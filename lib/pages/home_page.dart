@@ -14,6 +14,19 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Activities'),
       ),
+      body: const Center(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 100,
+            ),
+            Text(
+              "Hello World",
+              style: TextStyle(fontSize: 40),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
