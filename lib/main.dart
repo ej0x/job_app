@@ -1,10 +1,8 @@
-import 'dart:js';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:job_app/firebase_options.dart';
 import 'package:job_app/services/auth/auth_gate.dart';
-import 'package:job_app/services/auth/authe_services.dart';
+import 'package:job_app/services/auth/auth_service.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
