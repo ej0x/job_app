@@ -41,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade300,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Center(
           child: Padding(
@@ -53,32 +53,38 @@ class _LoginPageState extends State<LoginPage> {
                   height: 50,
                 ),
                 // logo
-                Icon(
-                  Icons.work,
-                  shadows: const [
-                    Shadow(color: Colors.black, blurRadius: 20.0),
-                  ],
-                  size: 100,
-                  color: Colors.yellow.shade800,
-                ),
+                // Icon(
+                //   Icons.work,
+                //   shadows: const [
+                //     Shadow(color: Colors.black, blurRadius: 20.0),
+                //   ],
+                //   size: 100,
+                //   color: Colors.yellow.shade800,
+                // ),
+
+                // illustration
+                image(),
 
                 const SizedBox(
                   height: 20,
                 ),
 
                 // welcome back message
-                const Text(
-                  "WELCOME BACK",
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
+                // const Text(
+                //   "WELCOME BACK",
+                //   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                // ),
+                // const SizedBox(
+                //   height: 20,
+                // ),
+
                 // email text fields
                 MyTextField(
-                    controller: emailController,
-                    hintText: "Email",
-                    obscureText: false),
+                  controller: emailController,
+                  hintText: "Email",
+                  obscureText: false,
+                  iconss: Icons.email,
+                ),
 
                 const SizedBox(
                   height: 10,
@@ -86,9 +92,11 @@ class _LoginPageState extends State<LoginPage> {
 
                 // password text fields
                 MyTextField(
-                    controller: passwordController,
-                    hintText: "Password",
-                    obscureText: true),
+                  controller: passwordController,
+                  hintText: "Password",
+                  obscureText: true,
+                  iconss: Icons.password,
+                ),
 
                 const SizedBox(
                   height: 20,
@@ -113,7 +121,10 @@ class _LoginPageState extends State<LoginPage> {
                       onTap: widget.onTap,
                       child: const Text(
                         'Register Now',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(249, 168, 39, 1),
+                        ),
                       ),
                     ),
                   ],
@@ -121,6 +132,20 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget image() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      child: Container(
+        width: double.infinity,
+        height: 250,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('images/login.png'), fit: BoxFit.scaleDown),
         ),
       ),
     );

@@ -22,7 +22,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade300,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Center(
           child: Padding(
@@ -33,30 +33,33 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(
                   height: 50,
                 ),
+                image(),
                 // logo
-                Icon(
-                  Icons.work,
-                  size: 100,
-                  color: Colors.grey[800],
-                ),
+                // Icon(
+                //   Icons.work,
+                //   size: 100,
+                //   color: Colors.grey[800],
+                // ),
 
                 const SizedBox(
                   height: 20,
                 ),
 
-                // Create Accout meesage
-                const Text(
-                  "Let's Create an Account",
-                  style: TextStyle(fontSize: 20),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
+                // // Create Accout meesage
+                // const Text(
+                //   "Let's Create an Account",
+                //   style: TextStyle(fontSize: 20),
+                // ),
+                // const SizedBox(
+                //   height: 20,
+                // ),
                 // email text fields
                 MyTextField(
-                    controller: emailController,
-                    hintText: "Email",
-                    obscureText: false),
+                  controller: emailController,
+                  hintText: "Email",
+                  obscureText: false,
+                  iconss: Icons.email,
+                ),
 
                 const SizedBox(
                   height: 10,
@@ -64,9 +67,11 @@ class _RegisterPageState extends State<RegisterPage> {
 
                 // password text fields
                 MyTextField(
-                    controller: passwordController,
-                    hintText: "Password",
-                    obscureText: true),
+                  controller: passwordController,
+                  hintText: "Password",
+                  obscureText: true,
+                  iconss: Icons.password,
+                ),
 
                 const SizedBox(
                   height: 20,
@@ -74,9 +79,11 @@ class _RegisterPageState extends State<RegisterPage> {
 
                 // Confirm Password
                 MyTextField(
-                    controller: confirmPasswordController,
-                    hintText: "Confirm Password",
-                    obscureText: true),
+                  controller: confirmPasswordController,
+                  hintText: "Confirm Password",
+                  obscureText: true,
+                  iconss: Icons.password,
+                ),
 
                 const SizedBox(
                   height: 20,
@@ -100,7 +107,10 @@ class _RegisterPageState extends State<RegisterPage> {
                       onTap: widget.onTap,
                       child: const Text(
                         'Login now ',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(249, 168, 39, 1),
+                        ),
                       ),
                     ),
                   ],
@@ -108,6 +118,20 @@ class _RegisterPageState extends State<RegisterPage> {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget image() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      child: Container(
+        width: double.infinity,
+        height: 300,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('images/login.png'), fit: BoxFit.scaleDown),
         ),
       ),
     );
