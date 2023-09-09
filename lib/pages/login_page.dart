@@ -49,9 +49,9 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(
-                  height: 50,
-                ),
+                // const SizedBox(
+                //   height: 50,
+                // ),
                 // logo
                 // Icon(
                 //   Icons.work,
